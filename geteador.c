@@ -29,6 +29,8 @@ int main( int argc, char *argv[] )  {
 #endif
 
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, stdout);
+        curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1");
+
         res = curl_easy_perform(curl);
         if(res != CURLE_OK){
             fprintf(stderr, "curl_easy_perform() failed: %s\n",
